@@ -19,7 +19,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 public class BaseTest implements AutoConstant{
-	//AppiumDriverLocalService service=null;
+//	AppiumDriverLocalService service=null;
 	public static AndroidDriver<WebElement> driver;
 //	@BeforeSuite
 //	public void startserver()
@@ -53,18 +53,18 @@ public class BaseTest implements AutoConstant{
 	
 	
 	
-//	@AfterMethod
-//	public void closeapp1()
-//	{
-////		int status = r.getStatus();
-////		String name = r.getName();
-////		if(status==2)
-////		{
-////			Photo.getphoto(driver, name);
-////		}
-//		//driver.closeApp();
-//	}
-//	
+	@AfterMethod
+	public void closeapp1(ITestResult r)
+	{
+		int status = r.getStatus();
+		String name = r.getName();
+		if(status==2)
+		{
+			Photo.getphoto(driver, name);
+		}
+		driver.closeApp();
+	}
+	
 	
 	
 	
